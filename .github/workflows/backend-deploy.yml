@@ -3,9 +3,9 @@ name: Backend CI/CD - EC2
 on:
   push:
     branches:
-      - master
+      - main
     paths:
-      - "Backend_/**"
+      - "e-commerce-backend/**"
 
 jobs:
   deploy:
