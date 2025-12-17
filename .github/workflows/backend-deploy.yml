@@ -23,7 +23,7 @@ jobs:
           key: ${{ secrets.EC2_KEY }}
           script: |
             cd ~/MERN-Ecom-Project/e-commerce-backend
-            git pull origin master
+            git pull origin main
             npm install
             echo "MONGO_URI=${{ secrets.MONGO_URI }}" > .env
             echo "JWT_SECRET=${{ secrets.JWT_SECRET }}" >> .env

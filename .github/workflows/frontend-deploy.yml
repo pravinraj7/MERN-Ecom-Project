@@ -3,9 +3,9 @@ name: Frontend CI/CD - S3
 on:
   push:
     branches:
-      - master
+      - main
     paths:
-      - "frontend/**"
+      - "e-commerce-frontend/**"
 
 jobs:
   deploy:
@@ -22,12 +22,12 @@ jobs:
 
       - name: Install dependencies
         run: |
-          cd frontend
+          cd e-commerce-frontend
           npm install
 
       - name: Build frontend
         run: |
-          cd frontend
+          cd e-commerce-frontend
           npm run build
 
       - name: Configure AWS credentials
@@ -39,4 +39,4 @@ jobs:
 
       - name: Sync frontend to S3
         run: |
-          aws s3 sync frontend/dist s3://${{ secrets.AWS_S3_BUCKET }} --delete
+          aws s3 sync e-commerce-frontend/dist s3://${{ secrets.AWS_S3_BUCKET }} --delete
