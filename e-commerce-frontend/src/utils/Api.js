@@ -1,1 +1,1 @@
-export const API = "http://localhost:5000";
+export const API = "https://mern-ecom-project-1.onrender.com:5000";
